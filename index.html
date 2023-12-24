@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport to make your website look good on all devices  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- title of website -->
+  <title>train station</title>
+  <!-- icon title of the website -->
+  <link rel="shortcut icon" href="./assets/train.jpg" type="image/x-icon"> 
+
+  <!-- description of website -->
+  <meta name="description" content="Its website that provide information 
+  and services related to travel, 
+  allowing users to plan, book, and manage their trips">
+
+  <!-- link to external css file  -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- link to aos for animation css on scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Link to font awesome library for icons -->
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/normalize.css">
+</head>
+<body >
+  <!-- start of header & navbar section  --> 
+  <header >
+    <div class="container">
+      <a href="#" class="logo"><span>T</span>rain <span>S</span>tation
+      </a>
+        <nav >
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#book-form">Book</a></li>
+                <li><a href="#abt">About</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Destination">Destinations</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="links">
+        <div class="icon">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#book-form">Book</a></li>
+            <li><a href="#abt">About</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#Destination">Destinations</a></li>
+            <li><a href="#contact">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="buttons">
+          <!-- before sign in -->
+          <div id="beforesignin">  
+            <a href="#" class="btn" onclick="overlay('inoverlay')">Log in</a>
+            <a href="#" class="btn" onclick="overlay('upoverlay')">Register</a>
+          </div>
+        <!-- after sign in -->
+
+          <div id="aftersignin">
+            <!-- logout button -->
+            <a href="#" class="btn" onclick="overlay('beforesignin'),
+            closeoverlay('aftersignin')">Log Out</a>
+          <!-- profile avatar -->
+          </div>
+
+      </div>
+      
+    </div>
+
+</header>
+<!-- end of header & navbar section  -->
+
+<!-- start of landing page  -->
+<section class="home" >
+  
+  <div class="container">
+    <div class="content">
+        <span >Let's Start</span>
+        <h3>Country Tour With Us</h3>
+        <p >services related to travel, 
+          allowing you to plan, book, and manage your trips</p>
+          
+        <a id="book-form" class="btn" onclick="location.href ='#book-form'">book now</a>
+        <div class="date">
+          <a href="#" onclick="showdate()">Date</a>
+        </div>
+    </div>
+    
+  </div>
+  
+  </section>
+<!-- end of landing page  -->
+
+<!-- start of Book page  -->
+<section class="book-form" >
+
+  <form class="Bookform" onsubmit="return ValidateBook()">
+      <div  class="inputBox">
+          <span>you are planning?</span>
+          <input id="placename"  type="text" placeholder="place name" >
+          <div id="placenameError" class="error" style="color:tomato;"></div>
+      </div>
+      <div  class="inputBox">
+          <span>When looking for ?</span>
+          <input id="date" type="date" value="">
+          <div id="DateError" class="error" style="color:tomato;"></div>
+      </div>
+      <div  class="inputBox">
+          <span>Total members?</span>
+          <input type="number" id="tickets" placeholder="number of travelers" >
+          <div id="TicketError" class="error" style="color:tomato;"></div>
+      </div>
+      <!-- <input type="submit" value="find now" class="btn"> -->
+      <button class="btn" id="abt" type="submit" >find now</button>
+  </form>
+<!-- ---------------travel request overlay --------------->
+
+<div id="findtable">
+  
+  <div class="tablediv" >
+      <table >
+          <th>Place</th><th>Date</th><th>Number of tickets</th>
+          <tr><td >Alexandria</td><td>30/12/2023</td><td>2</td></tr> 
+      </table>
+      <button class="btn" onclick="overlay('inoverlay')">Check out</button>
+      <button  class="btn" onclick="closeoverlay('findtable')">close</button>
+  </div>
+</div>
+</section >
+
+<!-- end of Book page  -->
+
+<!--  start of about us page -->
+<div class="about" >
+<div class="container" >
+  <div  class="head-about">
+<h2 >About Us</h2>
+</div>
+  <div class="row">
+<video  controls autoplay loop  width="500px" height="300px" 
+src="./assets/images/about.mp4" alt="">
+</div>
+<div class="content" >
+  <span>who we are ?</span>
+  <h1>A smilling agent for you </h1>
+  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+   Nam aperiam beatae eligendi odit, ipsum reprehenderit,
+      modi cumque iusto hic doloribus libero ut numquam ea,
+     voluptas molestiae. Eius quam cumque quo! </p>
+  <a href="#" id="Services" class="btn">Read more</a>
+
+</div>
+</div>
+</div>
+<!--  end of about us page -->
+
+<!-- start of services page -->
+
+<div class="services" >
+  <div class="container">
+
+    <div class="heading">
+      <span>Our Services</span>
+      <h1>cost effective</h1>
+    </div>
+
+    <div class="box-container" >
+      <div class="box">
+        <i class="fas fa-globe-asia" ></i>
+        <h3>world wide</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-hiking"></i>
+        <h3>adventure</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-utensils"></i>
+        <h3>food & drinks</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-hotel"></i>
+        <h3>affordable hotels</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-wallet"></i>
+        <h3>affordable price</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 support</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of services page -->
+<!-- start of destination page -->
+
+<div class="destination"id="Destination"  >
+  <div class="container" >
+    <div class="heading" >
+      <span >Destination Places</span>
+      <h1>Keep Looking Up</h1>
+    </div>
+    <div class="box-container">
+      <div class="box">
+        <div class="image">
+        <img src="./assets/images/des-1.jpg" alt="">
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <a href="#">read more <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+      <div class="box">
+        <div class="image">
+        <img src="./assets/images/des-2.jpg" alt="">
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <a href="#">read more <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+      <div class="box">
+        <div class="image">
+        <img src="./assets/images/des-3.jpg" alt="">
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <a href="#">read more <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+      <div class="box">
+        <div class="image">
+        <img src="./assets/images/des-4.jpg" alt="">
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <a href="#">read more <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+      <div class="box">
+        <div class="image">
+        <img src="./assets/images/des-5.jpg" alt="">
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <a href="#">read more <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+      <div class="box">
+        <div class="image">
+        <img src="./assets/images/des-6.jpg" alt="">
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <a href="#">read more <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+      <div class="box">
+        <div class="image">
+        <img src="./assets/images/des-7.jpg" alt="">
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <a href="#">read more <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+      <div class="box">
+        <div class="image">
+        <img src="./assets/images/des-8.jpg" alt="">
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <a href="#">read more <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- end of destination page -->
+<!-- start of contact us page -->
+<div class="contact-us" id="contact">
+  <div class="container">
+    <div class="heading">
+      <h2>Contact Us</h2>
+    </div>
+    <div class="contact-info">
+      <form action="">
+        <input class="main" type="text" name="text" placeholder="Your Name">
+        <input class="main" type="email" name="mail" placeholder="Your Email">
+        <textarea class="main" name="area" placeholder="Your Message"></textarea>
+        <input type="submit" class="btn" value="Send Message">
+      </form>
+      <div class="train-img">
+        <img src="./assets/images/train.jpg" alt="Train Image">
+      </div>
+      </div>
+  </div>
+</div>
+<!-- end of contact us page -->
+<!-- start of footer page -->
+
+<footer>
+  <div class="container">
+    <div class="column">
+      <h3><span>T</span>rain <span>S</span>tation</h3>
+      
+      <ul class="social">
+        <p>social media :</p>
+        <li><a href="#" ><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#book-form">Book</a></li>
+        <li><a href="#About">About Us</a></li>
+        <li><a href="#Services">Services</a></li>
+        <li><a href="#Destination">Destination</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        
+      </ul>
+    </div>
+    <div class="column">
+      <h3>Contact Info</h3>
+      <ul >
+        <li><i class="fa fa-map-marker" ></i>Alexandria,Egypt</li>
+        <li><i class="fa fa-phone"></i>+012 345 678901</li>
+        <li><i class="fa fa-envelope"></i>support@trainticket.com</li>
+        <li><i class="fa fa-map-marker"></i>7:00 am - 12:00pm</li>
+      </ul>
+    </div>
+    <div class="column">
+      <img src="./assets/images/footer.jpg" alt="">
+    </div>
+  </div>
+</footer>
+<!-- end of footer page -->
+<!-- --------------------sign in overlay--------------- -->
+<div id="inoverlay">
+  <div class="overlay-content">
+    <a href="#" onclick="closeoverlay('inoverlay')"><img src="assets/x.png" id="icon"></a>
+    <form class="signform" onsubmit="return Validate_signinform()">
+      <h1>sign in</h1>
+      <div class="inputBox" ><input type="text" id="email"  placeholder="Email" ></div>
+
+      <span id="emailError" class="error" style="color:tomato;"></span>
+
+      <div class="inputBox"><input type="password" id="password" placeholder="Password"></div>
+
+      <span id="passwordError" class="error" style="color:tomato;"></span>
+
+      <div class="b"><button class="btn2" type="submit" > sign in</button></div>
+      <div class="b"><span><input type="checkbox" class="checkbox">Remember me</span></div>
+      <div class="b"><span>New to travel<a href="#" 
+        onclick="overlay('upoverlay'),closeoverlay('inoverlay')" >Sign up</a></span></div>  
+      <div class="b"><span><a href="#" >Forget Password</a></span></div>  
+
+  </form> 
+  </div>
+</div>
+<!-- --------------------sign up overlay --------------------------- -->
+<div id="upoverlay">
+  <div class="overlay-content">
+    <a href="#" onclick="closeoverlay('upoverlay')"><img src="assets/x.png" alt="" id="icon"></a>
+    <form name='f'class="signform" onsubmit="return Validate_signupform()">
+      <h1>sign up</h1>
+      <div class="inputBox" ><input id="firstname" type="text" placeholder="First Name" name='firstname' ></div>
+      <span id="firstnameError" class="error" style="color:tomato;"></span>
+
+      <div class="inputBox" ><input id="secondname" type="text" placeholder="Last Name" ></div>
+      <span id="secondnameError" class="error" style="color:tomato;"></span>
+
+      <div class="inputBox" ><input id="email2" type="text" placeholder="Email" ></div>
+      <span id="emailError2" class="error" style="color:tomato;"></span>
+
+      <div class="inputBox"><input id="password2" type="password" placeholder="Password" ></div>
+      <span id="passwordError2" class="error" style="color:tomato;"></span>
+
+      <div class="inputBox"><input id="confirmPassword" type="password" placeholder=" Confirm Password" ></div>
+      <span id="confirmPasswordError" class="error" style="color:tomato;"></span>
+
+      <div class="b"><button class="btn2"  type="submit" >sign up</button></div>
+  </form> 
+  </div>
+</div> 
+  <!-- link to external js file  -->
+  <script src="./js/main.js"></script>
+
+</body>
+</html>
